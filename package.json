@@ -1,0 +1,9 @@
+{
+  "name": "jidou",
+  "version": "0.0.1",
+  "description": "automatic Anki card creation",
+  "main": "index.js",
+  "repository": "https://github.com/ahlec/jidou",
+  "author": "alec deitloff",
+  "license": "MIT"
+}
