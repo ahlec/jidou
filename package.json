@@ -3,7 +3,32 @@
   "version": "0.0.1",
   "description": "automatic Anki card creation",
   "main": "index.js",
-  "repository": "https://github.com/ahlec/jidou",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahlec/jidou"
+  },
   "author": "alec deitloff",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.11.0",
+    "yarn": "^1.9.4"
+  },
+  "scripts": {
+    "start": "yarn node ./build/index.js",
+    "build": "tsc",
+    "clean": "rm -rf ./build",
+    "lint": "tslint -p ."
+  },
+  "devDependencies": {
+    "@types/node": "^11.11.3",
+    "prettier": "^1.16.4",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3333"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "printWidth": 80,
+    "trailingComma": "es5"
+  }
 }
