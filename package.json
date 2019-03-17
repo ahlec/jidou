@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@types/node": "^11.11.3",
+    "@types/papaparse": "^4.5.9",
     "prettier": "^1.16.4",
     "tslint": "^5.14.0",
     "tslint-config-prettier": "^1.18.0",
@@ -30,5 +31,8 @@
     "singleQuote": true,
     "printWidth": 80,
     "trailingComma": "es5"
+  },
+  "dependencies": {
+    "papaparse": "^4.6.3"
   }
 }
