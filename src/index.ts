@@ -1,6 +1,12 @@
-import Note from './Note';
-import Writer from './Writer';
+import CommandArgs from './CommandArgs';
+import importCsv from './Importer';
+import writeToCsv from './Writer';
 
-const note = new Note();
-const writer = new Writer('test.csv');
-writer.write([note]);
+function main() {
+  const commandArgs = CommandArgs.parse();
+  const notes = importCsv(commandArgs.inputFilename);
+  // GATHER NOTES DATA
+  writeToCsv(commandArgs.outputFilename, notes);
+}
+
+main();

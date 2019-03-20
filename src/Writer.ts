@@ -23,30 +23,29 @@ function convertNoteToColumns(note: Note): ReadonlyArray<string> {
   ];
 }
 
-export default class Writer {
-  public constructor(private readonly filename: string) {}
-
-  public write(notes: ReadonlyArray<Note>) {
-    const data = notes.map(convertNoteToColumns);
-    const csv = unparse({
-      data,
-      fields: [
-        'kana',
-        'kanji',
-        'usuall written using kana alone',
-        'english',
-        'part of speech',
-        'picture',
-        'example one',
-        'example two',
-        'english definition clarification',
-        'kana clarification',
-        'note',
-        'followup',
-        'gakushuu',
-        'tags',
-      ],
-    });
-    writeFileSync(this.filename, csv);
-  }
+export default function writeToCsv(
+  filename: string,
+  notes: ReadonlyArray<Note>
+) {
+  const data = notes.map(convertNoteToColumns);
+  const csv = unparse({
+    data,
+    fields: [
+      'kana',
+      'kanji',
+      'usually written using kana alone',
+      'english',
+      'part of speech',
+      'picture',
+      'example one',
+      'example two',
+      'english definition clarification',
+      'kana clarification',
+      'note',
+      'followup',
+      'gakushuu',
+      'tags',
+    ],
+  });
+  writeFileSync(filename, csv);
 }
