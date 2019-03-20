@@ -17,7 +17,9 @@ function convertNoteToColumns(note: Note): ReadonlyArray<string> {
     note.note || '',
     '', // followup
     '', // gakushuu
-    note.tags,
+    Array.from(note.tags)
+      .map(tag => `#${tag}`)
+      .join(','),
   ];
 }
 
